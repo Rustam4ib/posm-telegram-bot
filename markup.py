@@ -1,16 +1,33 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove
 
+menu_btns = [
+    [KeyboardButton(text = 'Создать заявку',)],
+    [KeyboardButton(text = 'Обновление')],
+    [KeyboardButton(text = 'Фильтр заявок')],
+    [KeyboardButton(text = 'Открыть заявку')]
+    ]
 
-menu = [
-    [InlineKeyboardButton(text='Создать', callback_data="create_request"),
-    InlineKeyboardButton(text='Меню', callback_data="menu")],
-    [InlineKeyboardButton(text='Обновление', callback_data="refresh"),
-    InlineKeyboardButton(text='Фильтр', callback_data="filter")],
-    [InlineKeyboardButton(text='Открыть', callback_data="open")],
+city_btns = [
+    [InlineKeyboardButton(text = 'Almaty', callback_data='almaty')],
+    [InlineKeyboardButton(text = 'Astana', callback_data='astana')],
+    [InlineKeyboardButton(text = 'Karaganda', callback_data='karaganda')],
+    [InlineKeyboardButton(text = 'Aktobe', callback_data='aktobe')]
+    ]
+
+store_btns = [
+    [InlineKeyboardButton(text = 'store 1', callback_data='store_1')],
+    [InlineKeyboardButton(text = 'store 2', callback_data='store_2')],
+    [InlineKeyboardButton(text = 'store 3', callback_data='store_3')],
+    [InlineKeyboardButton(text = 'store 4', callback_data='store_4')]
 ]
 
 
-menu = InlineKeyboardMarkup(inline_keyboard=menu)
+menu_kb = ReplyKeyboardMarkup(keyboard=menu_btns)
+city_kb = InlineKeyboardMarkup(inline_keyboard=city_btns)
+store_kb = InlineKeyboardMarkup(inline_keyboard=store_btns) 
+
+
+#menu = InlineKeyboardMarkup(inline_keyboard=menu)
 
 
 # Create a new button dynamically
