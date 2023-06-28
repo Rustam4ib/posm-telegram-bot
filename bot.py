@@ -6,11 +6,13 @@ from aiogram import Dispatcher
 from aiogram.fsm.storage.memory import MemoryStorage
 from config import TOKEN
 from handlers import router
+import sqlite_db
 
 
 
 async def main():
     bot = Bot(token=TOKEN)
+    sqlite_db.sql_start()
     dp = Dispatcher(storage=MemoryStorage())    
     dp.include_router(router)
     await bot.delete_webhook(drop_pending_updates=True)
